@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Bubbloo</title>
+<link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="index.html" class="find-stores">Back to Home</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+    <div class="socials">
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+ <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero fade-in">
+  <h1>About Bubbloo</h1>
+</section>
+
+<section class="story fade-in container">
+  <h2>Our Story</h2>
+  <p>Bubbloo was born out of love for bold flavors and a drive to make milk exciting. From skateparks to boardrooms, we’ve fueled athletes, creators, and dreamers alike with quality ingredients and good vibes.</p>
+</section>
+
+<section class="ethos fade-in container">
+  <h2>Our Ethos</h2>
+  <p>We’re here for the thrill seekers, the laugh-out-loud moments, and everyone who refuses to settle. At Bubbloo, staying young at heart isn’t an option—it’s a lifestyle. Every can is packed with energy, fun, and memories waiting to happen.</p>
+</section>
+
+<section class="values fade-in">
+  <div class="container cards">
+    <div class="card">Recapture Your Youth</div>
+    <div class="card">Break Some Rules</div>
+    <div class="card">Rediscover Your Potential</div>
+  </div>
+</section>
+
+<section class="why fade-in container">
+  <h2>Why Bubbloo?</h2>
+  <p>Every can is crafted with ultrafiltered skim milk, protein, vitamins, and just the right kick of caffeine. No lactose. No sugar. No compromise. Just the boost you need to milk the most out of life.</p>
+</section>
+
+<section class="mission fade-in container">
+  <h2>Our Mission</h2>
+  <p>We aim to redefine what milk can be—fun, bold, and energizing. Our mission is to inspire everyone to embrace adventure, chase their dreams, and savor life’s moments with every sip of Bubbloo.</p>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="#">Classic</a>
+      <a href="#">Tropical</a>
+      <a href="#">Limited Edition</a>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Stay in the loop with exclusive updates, events, and early product releases!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("menu-icon").addEventListener("click", () => {
+    document.getElementById("menu-overlay").classList.add("show");
+  });
+  document.getElementById("menu-close").addEventListener("click", () => {
+    document.getElementById("menu-overlay").classList.remove("show");
+  });
+
+  const sections = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubbloo — Cookies & Cream</title>
+<link rel="stylesheet" href="css/peanut-chocolate.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="flavors.html" class="find-stores">Back to Flavors</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+    <div class="socials">
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+  <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-flavor fade-in">
+  <div>
+    <h1>Peanut Butter Chocolate</h1>
+    <p>Rich peanut butter and smooth chocolate meet in one irresistible flavor. Packed with protein and no added sugar.</p>
+  </div>
+</section>
+
+<!-- Nutrition Stats Section -->
+<section class="nutrition-hero fade-in">
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-number">65mg</div>
+      <div class="stat-label">CAFFEINE</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">22g</div>
+      <div class="stat-label">PROTEIN</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1g</div>
+      <div class="stat-label">SUGAR</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">95</div>
+      <div class="stat-label">CALORIES</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">ZERO</div>
+      <div class="stat-label">LACTOSE</div>
+    </div>
+  </div>
+
+  <div class="nutrition-extra">
+    <p>*DELICIOUSLY BALANCED FOR YOUR CRAVINGS</p>
+    <div class="rating">
+      ⭐⭐⭐⭐½ <span>1,172 ratings from Amazon</span>
+    </div>
+  </div>
+</section>
+
+<section class="ingredients-section fade-in">
+  <div class="ingredients-left">
+    <h2 class="nutrition-heading">
+      <span class="brand">Bubbloo</span> NUTRITION & 
+      <span class="highlight-box">INGREDIENTS</span>
+    </h2>
+
+    <p>
+       A powerful blend of milk, natural cocoa, real peanut butter, and key vitamins to keep you going all day.
+    </p>
+
+    <div class="icons">
+      <div><img src="images/skimmilk.png" alt=""> ULTRAFILTERED<br>SKIM MILK</div>
+      <div><img src="images/iconvitamin.png" alt=""> VITAMIN A<br>PALMITATE</div>
+      <div><img src="images/iconcalcium.png" alt=""> CALCIUM</div>
+      <div><img src="images/iconvitamind3.png" alt=""> VITAMIN D3</div>
+      <div><img src="images/iconcaffeine.png" alt=""> CAFFEINE</div>
+      <div><img src="images/iconpotassium.png" alt=""> POTASSIUM</div>
+    </div>
+
+    <button id="full-ingredients-btn">FULL INGREDIENT LIST</button>
+  </div>
+
+  <div class="ingredients-right">
+    <img src="images/peanutscannutrition.png" alt="">
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="ingredients-modal" class="modal">
+  <div class="modal-content animate">
+    <span class="close">&times;</span>
+    <h3>INGREDIENTS</h3>
+    <p>
+       Ultrafiltered Skim Milk Blend (Water, Ultrafiltered Skim Milk), Less Than 2% Of: Cocoa, Peanut Butter, Natural Flavors, Salt, Caffeine, Dipotassium Phosphate, Carrageenan, Lactase Enzyme, Acesulfame Potassium, Sucralose, Vitamin A Palmitate, Vitamin D3.
+    </p>
+    <p><strong>Contains:</strong> Milk</p>
+  </div>
+</div>
+
+<section class="chocolate-drip">
+  <div class="drip-text">
+    <span><span class="highlight-chug">CHUG</span> BUBBLOO WITH <span class="highlight-delight">DELIGHT</span></span>
+    <span><span class="highlight-chug">CHUG</span> BUBBLOO WITH <span class="highlight-delight">DELIGHT</span></span>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("ingredients-modal");
+  const btn = document.getElementById("full-ingredients-btn");
+  const span = modal.querySelector(".close");
+
+  btn.onclick = () => {
+    modal.style.display = "flex";
+    document.body.classList.add("modal-open");
+  };
+
+  span.onclick = () => {
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open");
+    }
+  };
+
+  const sections = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+
+<script>
+document.getElementById('menu-icon').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.add('show');
+});
+
+document.getElementById('menu-close').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.remove('show');
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="chocolate-milk.html">Chocolate</a>
+      <a href="strawberry-milk.html">Strawberry</a>
+      <a href="cookies-cream.html">Cookies and Cream </a>
+      <a href="peanut-chocolate.html">Peanut Butter Chocolate</a>
+      <a href="vanilla-milkshake.html">Vanilla</a>
+      <a href="max-chocolate.html">Max Chocolate</a>
+
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+       <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="tasty-talks.html">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@karthikz4104" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fde9dc;
+  color: #3b2c2c;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #5c2b11;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.find-stores {
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #5c2b11;
+  font-weight: bold;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 9999;
+}
+
+.menu-overlay.show {
+  transform: translateX(0);
+}
+
+.menu-left {
+  width: 50%;
+  background: #fdece1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-left .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.menu-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-left ul li {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4b2e1e;
+  margin: 20px 0;
+}
+
+.menu-left ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-left .socials {
+  margin-top: 50px;
+  font-size: 1rem;
+}
+
+.menu-left .socials a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #4b2e1e;
+}
+
+.menu-right {
+  width: 50%;
+  overflow: hidden;
+}
+
+.menu-right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Hero */
+.tasty-hero {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+
+.tasty-hero h1 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+
+.tasty-hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #5c2b11;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.video-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Footer */
+.site-footer {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-col {
+  flex: 1 1 150px;
+  min-width: 150px;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #f5c16c;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 5px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-col.newsletter form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.footer-col.newsletter input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.footer-col.newsletter button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.footer-bottom a {
+  color: #aaa;
+  margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+.footer-socials {
+  margin-top: 10px;
+}
+
+.footer-socials .social-icon {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials .social-icon:hover {
+  color: #f5c16c;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

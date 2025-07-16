@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Bubbloo</title>
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="find-in-store.html" class="find-stores">Find in Store</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+    <div class="socials">
+      <a href="https://www.youtube.com/@karthikz4104">YouTube</a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+ <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+</div>
+
+<div class="contact-container">
+  <div class="contact-left">
+    <h1>GET IN TOUCH</h1>
+    <p>We love to hear from you. Reach out with comments, questions and feedback. Our lovely team will reply as quickly as we can.</p>
+    <p>Feel free to shoot us an email contact@BUBBLOO.com</p>
+  </div>
+
+  <div class="contact-right" id="form-area">
+    <h2>DON’T BE SHY.<br>HIT US UP AND WE’LL GET BACK TO YOU!</h2>
+    <form id="contact-form">
+      <div class="form-row">
+        <input type="text" name="fullname" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+      </div>
+      <div class="form-row">
+        <select name="subject" required>
+          <option value="" disabled selected>Subject</option>
+          <option>Order Questions</option>
+          <option>Product Questions</option>
+          <option>General</option>
+        </select>
+        <input type="text" name="order-number" placeholder="Order number (optional)">
+      </div>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+</div>
+
+<div id="confirmationModal" class="modal">
+  <h2>Thank You!</h2>
+  <p>Your submission has been received. We’ll get back to you soon.</p>
+</div>
+
+<section class="faq-section">
+  <h2>FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h2>
+
+  <div class="faq-tabs">
+    <button class="tab active" data-tab="orders">Orders</button>
+    <button class="tab" data-tab="products">Product Questions</button>
+  </div>
+
+  <div class="faq-content orders visible">
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="question">Where do you deliver?</div>
+        <div class="answer">We deliver nationwide within 3–5 business days!</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">Can I order Bubbloo in Canada?</div>
+        <div class="answer">Currently, we ship only within the US. Canada coming soon!</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">Does Bubbloo need to ship cold?</div>
+        <div class="answer">No, Bubbloo is shelf-stable and ready anytime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">My Bubbloo arrived damaged, now what?</div>
+        <div class="answer">Contact us and we’ll replace it right away.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-content products">
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="question">What is the shelf life of Bubbloo?</div>
+        <div class="answer">Each can stays fresh for up to 12 months unopened.</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">Is Bubbloo gluten-free?</div>
+        <div class="answer">Yes! Bubbloo is gluten-free and safe for celiacs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">Does it contain caffeine?</div>
+        <div class="answer">Yes, each can contains a moderate amount of caffeine.</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">Are there any vegan options?</div>
+        <div class="answer">Currently, all our drinks use dairy milk. Vegan coming soon!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("form-area").innerHTML = `
+    <h2>DON’T BE SHY.<br>HIT US UP AND WE’LL GET BACK TO YOU!</h2>
+    <p style="text-align:center; font-size:1.2rem; margin-top:40px;">Thank you!<br>Your submission has been received!</p>
+  `;
+});
+
+document.getElementById("menu-icon").addEventListener("click", () => {
+  document.getElementById("menu-overlay")?.classList.add("show");
+});
+document.getElementById("menu-close")?.addEventListener("click", () => {
+  document.getElementById("menu-overlay")?.classList.remove("show");
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const modal = document.getElementById("confirmationModal");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent page reload
+    document.body.classList.add("modal-open");
+    modal.classList.add("show");
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.faq-tabs .tab');
+  const contents = document.querySelectorAll('.faq-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      contents.forEach(c => c.classList.remove('visible'));
+      document.querySelector(`.faq-content.${tab.dataset.tab}`).classList.add('visible');
+    });
+  });
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="#">Classic</a>
+      <a href="#">Tropical</a>
+      <a href="#">Limited Edition</a>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

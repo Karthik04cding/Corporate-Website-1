@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubbloo — Shop</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="index.html" class="find-stores">Back to Home</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+     <div class="socials">
+      <a href="https://youtube.com/@karthikz4104?si=jL_W4957laoIZivw">YouTube</a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y">Instagram</a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1">TikTok</a>
+    </div>
+  </div>
+    <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+</div>
+
+<section class="shop-hero">
+  <div class="hero-carousel">
+    <div class="hero-slide">Explore <span class="highlight">Full</span> Flavors</div>
+    <div class="hero-slide alt">Explore <span class="highlight">Full</span> Flavors</div>
+  </div>
+  <p>Browse all our bold and delicious flavors, ready to fuel your next adventure. Discover your favorite today!</p>
+</section>
+
+<section class="flavors-grid">
+  <a href="chocolate-milk.html" class="flavor-card">
+    <h2>Chocolate Milk</h2>
+    <img src="images/chocolate.png" alt="Chocolate Milk">
+  </a>
+
+  <a href="strawberry-milk.html" class="flavor-card">
+    <h2>Strawberry Milk</h2>
+    <img src="images/strawberrymilk.jpg" alt="Strawberry Milk">
+  </a>
+
+  <a href="cookies-cream.html" class="flavor-card">
+    <h2>Cookies & Cream</h2>
+    <img src="images/cookiesandcream.jpg" alt="Cookies & Cream">
+  </a>
+
+  <a href="peanut-chocolate.html" class="flavor-card">
+    <h2>Peanut Butter Chocolate</h2>
+    <img src="images/peanutbutterchocolate.jpg" alt="Peanut Butter Chocolate">
+  </a>
+
+  <a href="vanilla-milkshake.html" class="flavor-card">
+    <h2>Vanilla Milkshake</h2>
+    <img src="images/vanillamilk.jpg" alt="Vanilla Milkshake">
+  </a>
+
+  <a href="max-chocolate.html" class="flavor-card">
+    <h2>Max Chocolate Milk</h2>
+    <img src="images/maxchocalatemilk.png" alt="Max Chocolate Milk">
+  </a>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="chocolate-milk.html">Chocolate</a>
+      <a href="strawberry-milk.html">Strawberry</a>
+      <a href="cookies-cream.html">Cookies and Cream </a>
+      <a href="peanut-chocolate.html">Peanut Butter Chocolate</a>
+      <a href="vanilla-milkshake.html">Vanilla</a>
+      <a href="max-chocolate.html">Max Chocolate</a>
+
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+       <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="tasty-talks.html">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@karthikz4104" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menu-icon').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.add('show');
+});
+
+document.getElementById('menu-close').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.remove('show');
+});
+</script>
+
+<script>
+// reveal fuel-section on scroll
+window.addEventListener('scroll', () => {
+  const fuelSection = document.querySelector('.fuel-section');
+  const triggerPoint = window.innerHeight / 1.2;
+
+  if (fuelSection.getBoundingClientRect().top < triggerPoint) {
+    fuelSection.classList.add('show');
+  }
+});
+</script>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+document.getElementById('next').addEventListener('click', () => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.getElementById("prev-slide");
+  const nextBtn = document.getElementById("next-slide");
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Event listeners
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+  }
+
+  // Initialize
+  showSlide(currentSlide);
+});
+</script>
+
+<script>
+document.getElementById('menu-icon').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.add('show');
+});
+
+document.getElementById('menu-close').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.remove('show');
+});
+</script>
+
+
+</body>
+</html>

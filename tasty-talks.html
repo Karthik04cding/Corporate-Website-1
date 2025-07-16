@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasty Talks — Bubbloo</title>
+<link rel="stylesheet" href="css/tasty-talks.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="index.html" class="find-stores">Back to Home</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+     <div class="socials">
+      <a href="https://youtube.com/@karthikz4104?si=jL_W4957laoIZivw">YouTube</a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y">Instagram</a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1">TikTok</a>
+    </div>
+  </div>
+  <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+</div>
+
+
+<!-- Hero Section -->
+<section class="tasty-hero fade-in">
+  <h1>TASTY TALKS</h1>
+  <p>At Bubbloo, we live boldly, daring you to break boundaries and rediscover your inner rebel with each sip.</p>
+</section>
+
+<!-- Video Grid -->
+<section class="video-grid fade-in">
+  <div class="video-card">
+    <video src="video/video1.mp4" controls></video>
+  </div>
+  <div class="video-card">
+    <video src="video/video2.mp4" controls></video>
+  </div>
+  <div class="video-card">
+    <video src="video/video3.mp4" controls></video>
+  </div>
+  <div class="video-card">
+    <video src="video/video4.mp4" controls></video>
+  </div>
+  <div class="video-card">
+    <video src="video/video5.mp4" controls></video>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="chocolate-milk.html">Chocolate</a>
+      <a href="strawberry-milk.html">Strawberry</a>
+      <a href="cookies-cream.html">Cookies and Cream </a>
+      <a href="peanut-chocolate.html">Peanut Butter Chocolate</a>
+      <a href="vanilla-milkshake.html">Vanilla</a>
+      <a href="max-chocolate.html">Max Chocolate</a>
+
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+       <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="tasty-talks.html">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@karthikz4104" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("menu-icon").addEventListener("click", () => {
+    document.getElementById("menu-overlay").classList.add("show");
+  });
+  document.getElementById("menu-close").addEventListener("click", () => {
+    document.getElementById("menu-overlay").classList.remove("show");
+  });
+
+  const sections = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>
+

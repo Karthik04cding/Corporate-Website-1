@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Bubbloo In Stores</title>
+<link rel="stylesheet" href="css/find-in-stores.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Bubbloo</div>
+  <div class="menu-icon" id="menu-icon">☰</div>
+  <a href="index.html" class="find-stores">Back to Home</a>
+</header>
+
+<div id="menu-overlay" class="menu-overlay">
+  <div class="menu-left">
+    <span class="close-btn" id="menu-close">&times;</span>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="flavors.html">SHOP</a></li>
+      <li><a href="find-in-store.html">FIND IN STORES</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
+      <li><a href="tasty-talks.html" class="active">TASTY TALKS</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+     <div class="socials">
+      <a href="https://youtube.com/@karthikz4104?si=jL_W4957laoIZivw">YouTube</a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y">Instagram</a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1">TikTok</a>
+    </div>
+  </div>
+  <div class="menu-right">
+   <img src="images/bg1.png" alt="Animated drink" />
+  </div>
+</div>
+
+<section class="hero">
+  <h1>SEARCH FOR <span class="brand">BUBBLOO</span> <span class="highlight">NEAR YOU</span></h1>
+</section>
+
+<section class="stores">
+  <h2 class="visible">Bubbloo in Real Life</h2>
+  <div class="store-logos">
+    <div>Albertsons</div>
+    <div>Kroger</div>
+    <div>H-E-B</div>
+    <div>QuikTrip</div>
+    <div>Circle K</div>
+    <div>Extra Mile</div>
+  </div>
+</section>
+
+<section class="delivery">
+  <h2>Bubbloo Delivered By</h2>
+  <div class="delivery-logos">
+    <div>Amazon</div>
+    <div>TikTok Shop</div>
+    <div>Walmart</div>
+  </div>
+</section>
+
+<section class="cant-find">
+  <h2>CAN'T FIND <span class="brand">BUBBLOO</span> <span class="highlight">NEAR YOU?</span></h2>
+  <p>We’re now available at thousands of locations and online — and we’re adding more every week!</p>
+  <a href="contact.html"><button>Contact Us</button></a>
+</section>
+
+<script>
+document.getElementById('menu-icon').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.add('show');
+});
+document.getElementById('menu-close').addEventListener('click', () => {
+  document.getElementById('menu-overlay').classList.remove('show');
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section h2");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(sec => observer.observe(sec));
+});
+</script>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Bubbloo Flavors</h4>
+      <a href="chocolate-milk.html">Chocolate</a>
+      <a href="strawberry-milk.html">Strawberry</a>
+      <a href="cookies-cream.html">Cookies and Cream </a>
+      <a href="peanut-chocolate.html">Peanut Butter Chocolate</a>
+      <a href="vanilla-milkshake.html">Vanilla</a>
+      <a href="max-chocolate.html">Max Chocolate</a>
+
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Chug Club</a>
+      <a href="#">Student Marketing</a>
+      <a href="#">Dairy Dealers</a>
+    </div>
+       <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="tasty-talks.html">Tasty Talk</a>
+    </div>
+    <div class="footer-col newsletter">
+      <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bubbloo - All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@karthikz4104" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/bubbloo.here?igsh=ZXdhM2Izam01cW0y" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@bubbloo_drinks?_t=ZS-8y42cx4tyxc&_r=1" class="social-icon"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
